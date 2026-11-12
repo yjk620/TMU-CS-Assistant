@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local planning docs
+TMU_RAG_SPEC.md
+ROADMAP.md
+
+# Other
+logs/
+.DS_Store
