@@ -1,6 +1,6 @@
 import pytest
 
-from app.text import extract_codes, normalize_codes, normalize_url, should_skip
+from app.text import extract_codes, find_semester, is_refusal, normalize_codes, normalize_url, should_skip
 
 BASE = "https://www.torontomu.ca"
 CPS_803 = f"{BASE}/calendar/2026-2027/courses/computer-science/CPS/803/"
@@ -101,3 +101,28 @@ def test_extract_codes(text, expected):
 def test_normalize_codes(text, expected):
     assert normalize_codes(text, SUBJECTS) == expected
 
+
+
+@pytest.mark.parametrize("answer, expected", [
+    ("I don't know - check with your program advisor.", True),
+    ("i don’t know – check with your program advisor", True),
+    ("  I don't know —  check with your\nprogram advisor!  ", True),
+    ("I don't know - check with your program advisor. CPS 803 needs MTH 108.", False),
+    ("CPS 803 requires MTH 108.", False),
+])
+def test_is_refusal(answer, expected):
+    assert is_refusal(answer) is expected
+
+
+@pytest.mark.parametrize("question, expected", [
+    ("What do I take in 3rd semester?", (3, "four-year")),
+    ("courses in semester 5", (5, "four-year")),
+    ("Which courses are required in first semester?", (1, "four-year")),
+    ("what do part-time students take in semester 2?", (2, "part-time")),
+    ("part time sixth semester courses", (6, "part-time")),
+    ("When are the work terms in the co-op program?", (None, "co-op")),
+    ("What is CPS 803 about?", None),
+    ("What courses do I need to take for the CS degree?", None),
+])
+def test_find_semester(question, expected):
+    assert find_semester(question) == expected

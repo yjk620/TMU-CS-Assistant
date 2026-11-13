@@ -55,3 +55,46 @@ def normalize_codes(text, subjects):
         return f"{letters} {m.group(2)}"
 
     return CODE_RE_ANY_CASE.sub(rewrite, text)
+
+
+#the exact sentence the assistant replies with when the excerpts don't answer the question
+REFUSAL = "I don't know - check with your program advisor."
+
+#curly quotes -> straight, en/em dashes -> "-"
+PUNCTUATION_MAP = str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"', "–": "-", "—": "-"})
+
+
+#lowercase, straight quotes, plain dashes, single spaces, no trailing punctuation
+def normalize_answer(text):
+    text = " ".join(text.lower().translate(PUNCTUATION_MAP).split())
+    return text.rstrip(" .!?")
+
+
+#is this answer the refusal sentence (ignoring case, quote/dash style, spacing, trailing punctuation)?
+def is_refusal(answer):
+    return normalize_answer(answer) == normalize_answer(REFUSAL)
+
+
+SEMESTER_WORDS = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]
+#"3rd semester", "semester 3", "third semester" (also "sem 3")
+SEMESTER_RES = [
+    re.compile(r"\b([1-8])(?:st|nd|rd|th)\s+sem(?:ester)?\b", re.IGNORECASE),
+    re.compile(r"\bsem(?:ester)?\s*([1-8])\b", re.IGNORECASE),
+    re.compile(rf"\b({'|'.join(SEMESTER_WORDS)})\s+sem(?:ester)?\b", re.IGNORECASE),
+]
+PART_TIME_RE = re.compile(r"\bpart[- ]?time\b", re.IGNORECASE)
+CO_OP_RE = re.compile(r"\bco-?op\b|\bwork[- ]?terms?\b", re.IGNORECASE)
+
+
+#(semester, format) of the program chunk a question asks about, or None
+#part-time only if the question says so, otherwise four-year; co-op work terms -> (None, "co-op")
+def find_semester(question):
+    for pattern in SEMESTER_RES:
+        match = pattern.search(question)
+        if match:
+            value = match.group(1).lower()
+            semester = int(value) if value.isdigit() else SEMESTER_WORDS.index(value) + 1
+            return semester, "part-time" if PART_TIME_RE.search(question) else "four-year"
+    if CO_OP_RE.search(question):
+        return None, "co-op"
+    return None
