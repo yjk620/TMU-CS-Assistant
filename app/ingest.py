@@ -16,6 +16,7 @@ import psycopg
 from bs4 import BeautifulSoup, Comment, NavigableString
 from dotenv import load_dotenv
 
+from app import voyage
 from app.scrape import page_parser
 from app.text import CODE_RE, normalize_codes, normalize_url
 
@@ -308,9 +309,9 @@ def stored_embeddings(conn):
     return dict(rows)
 
 
-#embed texts with Voyage; returns one pgvector text per text (step 5)
+#embed chunk texts with Voyage; returns one pgvector text "[0.1,-0.2,...]" per text
 def embed_texts(texts):
-    raise NotImplementedError(f"{len(texts)} chunks need embeddings: add VOYAGE_API_KEY and finish step 5")
+    return ["[" + ",".join(map(str, vector)) + "]" for vector in voyage.embed(texts, "document")]
 
 
 #pass 2: embed only chunks whose content_hash has no stored embedding (each distinct text once)
@@ -340,12 +341,15 @@ def save_document(conn, document_id, chunks, embeddings):
             )
 
 
-#the whole ingest: plan every document, embed what's new, then write
-def ingest(conn, dry_run=False):
+#the whole ingest: plan every document, embed what's new, then write.
+#no database connection is held while Voyage runs: on the free tier embedding takes ~15 minutes,
+#and Neon closes connections that sit idle that long
+def ingest(database_url, dry_run=False):
     started = time.monotonic()
-    subjects = load_subjects(conn)
-    planned = plan(conn, subjects)
-    embeddings = stored_embeddings(conn)
+    with psycopg.connect(database_url) as conn:
+        subjects = load_subjects(conn)
+        planned = plan(conn, subjects)
+        embeddings = stored_embeddings(conn)
     total = sum(len(chunks) for _, chunks in planned)
     new = len({c["content_hash"] for _, chunks in planned for c in chunks} - embeddings.keys())
     log.info("%d documents, %d chunks, %d need embedding", len(planned), total, new)
@@ -353,9 +357,10 @@ def ingest(conn, dry_run=False):
         return
 
     embed_missing(planned, embeddings)
-    for document_id, chunks in planned:
-        save_document(conn, document_id, chunks, embeddings)
-    count = conn.execute("select count(*) from chunks").fetchone()[0]
+    with psycopg.connect(database_url, autocommit=True) as conn:
+        for document_id, chunks in planned:
+            save_document(conn, document_id, chunks, embeddings)
+        count = conn.execute("select count(*) from chunks").fetchone()[0]
     log.info("done in %.0fs: %d chunks stored, %d embedded, %d reused",
              time.monotonic() - started, count, new, total - new)
 
@@ -366,16 +371,17 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="count chunks and embeddings needed, write nothing")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
+    logging.getLogger("httpx").setLevel(logging.WARNING)
 
     load_dotenv()
-    with psycopg.connect(os.environ["DATABASE_URL"], autocommit=True) as conn:
-        if args.show:
+    if args.show:
+        with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
             for c in document_chunks(conn, normalize_url(args.show), load_subjects(conn)):
                 print(f"semester={c['semester']} format={c['format']}")
                 print(c["content"])
                 print("-" * 40)
-            return
-        ingest(conn, dry_run=args.dry_run)
+        return
+    ingest(os.environ["DATABASE_URL"], dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
