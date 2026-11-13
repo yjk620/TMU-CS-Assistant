@@ -9,7 +9,7 @@ CALENDAR_YEAR = "2026-2027"
 CODE_RE = re.compile(r"\b(C?[A-Z]{3})[ -]?(\d{3})\b")
 #re.compile: turns pattern string into ready to use pattern object
 
-#for user question course code reading
+#case insensitive version of CODE_RE
 CODE_RE_ANY_CASE = re.compile(CODE_RE.pattern, re.IGNORECASE)
 
 #date format
