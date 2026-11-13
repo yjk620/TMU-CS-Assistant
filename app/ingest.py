@@ -1,13 +1,16 @@
 # turns stored pages (documents) into chunks for search
 # 1. parse each document by its kind into chunk texts
 # 2. rewrite course codes to the stored form (CPS 803)
-# 3. (step 4) replace the document's chunks, reusing embeddings when content_hash matches
-# 4. (step 5) embed new chunks with Voyage in batches
+# 3. embed only chunks whose content_hash has no stored embedding (Voyage, in batches)
+# 4. replace each document's chunks in one transaction, reusing stored embeddings
 
 import argparse
+import hashlib
+import logging
 import math
 import os
 import re
+import time
 
 import psycopg
 from bs4 import BeautifulSoup, Comment, NavigableString
@@ -15,6 +18,8 @@ from dotenv import load_dotenv
 
 from app.scrape import page_parser
 from app.text import CODE_RE, normalize_codes, normalize_url
+
+log = logging.getLogger("ingest")
 
 
 #every subject prefix in courses (CPS, MTH, ...) plus CCPS, which has no course pages
@@ -267,33 +272,110 @@ CHUNKERS = {
 }
 
 
-#all chunks for one stored document, with course codes normalized
+#chunks for one page, with course codes normalized and a content_hash on each
+def make_chunks(kind, html, url, subjects):
+    chunks = CHUNKERS[kind](html, url)
+    for c in chunks:
+        c["content"] = normalize_codes(c["content"], subjects)
+        c["content_hash"] = hashlib.sha256(c["content"].encode()).hexdigest()
+    return chunks
+
+
+#all chunks for one stored document (used by --show)
 def document_chunks(conn, url, subjects):
     row = conn.execute("select kind, html from documents where url = %s", (url,)).fetchone()
     if row is None:
         raise ValueError(f"not in documents: {url}")
     kind, html = row
-    chunks = CHUNKERS[kind](html, url)
-    for c in chunks:
-        c["content"] = normalize_codes(c["content"], subjects)
-    return chunks
+    return make_chunks(kind, html, url, subjects)
+
+
+#pass 1: chunk every document; a page that fails is logged and skipped, so its old chunks stay
+def plan(conn, subjects):
+    planned = []
+    for document_id, url, kind, html in conn.execute("select id, url, kind, html from documents order by id").fetchall():
+        try:
+            planned.append((document_id, make_chunks(kind, html, url, subjects)))
+        except Exception as error:
+            log.warning("failed %s: %s", url, error)
+    return planned
+
+
+#every embedding already stored, by content_hash, as pgvector text "[0.1,-0.2,...]"
+#(text, so reused embeddings are copied as-is without needing pgvector's Python package)
+def stored_embeddings(conn):
+    rows = conn.execute("select distinct on (content_hash) content_hash, embedding::text from chunks").fetchall()
+    return dict(rows)
+
+
+#embed texts with Voyage; returns one pgvector text per text (step 5)
+def embed_texts(texts):
+    raise NotImplementedError(f"{len(texts)} chunks need embeddings: add VOYAGE_API_KEY and finish step 5")
+
+
+#pass 2: embed only chunks whose content_hash has no stored embedding (each distinct text once)
+def embed_missing(planned, embeddings):
+    missing = {}
+    for _, chunks in planned:
+        for c in chunks:
+            if c["content_hash"] not in embeddings:
+                missing[c["content_hash"]] = c["content"]
+    if missing:
+        embeddings.update(zip(missing, embed_texts(list(missing.values()))))
+    return len(missing)
+
+
+#pass 3: replace one document's chunks in one transaction
+def save_document(conn, document_id, chunks, embeddings):
+    with conn.transaction():
+        conn.execute("delete from chunks where document_id = %s", (document_id,))
+        with conn.cursor() as cur:
+            cur.executemany(
+                """
+                insert into chunks (document_id, content, content_hash, semester, format, embedding)
+                values (%s, %s, %s, %s, %s, %s::vector)
+                """,
+                [(document_id, c["content"], c["content_hash"], c["semester"], c["format"],
+                  embeddings[c["content_hash"]]) for c in chunks],
+            )
+
+
+#the whole ingest: plan every document, embed what's new, then write
+def ingest(conn, dry_run=False):
+    started = time.monotonic()
+    subjects = load_subjects(conn)
+    planned = plan(conn, subjects)
+    embeddings = stored_embeddings(conn)
+    total = sum(len(chunks) for _, chunks in planned)
+    new = len({c["content_hash"] for _, chunks in planned for c in chunks} - embeddings.keys())
+    log.info("%d documents, %d chunks, %d need embedding", len(planned), total, new)
+    if dry_run:
+        return
+
+    embed_missing(planned, embeddings)
+    for document_id, chunks in planned:
+        save_document(conn, document_id, chunks, embeddings)
+    count = conn.execute("select count(*) from chunks").fetchone()[0]
+    log.info("done in %.0fs: %d chunks stored, %d embedded, %d reused",
+             time.monotonic() - started, count, new, total - new)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Turn stored pages into chunks")
+    parser = argparse.ArgumentParser(description="Turn stored pages into chunks with embeddings")
     parser.add_argument("--show", help="print one stored page's chunks without saving")
+    parser.add_argument("--dry-run", action="store_true", help="count chunks and embeddings needed, write nothing")
     args = parser.parse_args()
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
     load_dotenv()
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
-        subjects = load_subjects(conn)
+    with psycopg.connect(os.environ["DATABASE_URL"], autocommit=True) as conn:
         if args.show:
-            for c in document_chunks(conn, normalize_url(args.show), subjects):
+            for c in document_chunks(conn, normalize_url(args.show), load_subjects(conn)):
                 print(f"semester={c['semester']} format={c['format']}")
                 print(c["content"])
                 print("-" * 40)
             return
-    parser.error("only --show is supported so far")
+        ingest(conn, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
