@@ -34,14 +34,35 @@ def chunk(content, semester=None, format=None):
     return {"content": content, "semester": semester, "format": format}
 
 
-#course page: one chunk with code, title, description and prerequisites
+#course info fields students ask about (billing units left out)
+COURSE_INFO = ("Weekly Contact", "GPA Weight", "Course Count")
+
+
+#"Label: value." for the course info fields and all four requisite blocks, as written on the page
+#(requisites are kept even when "None", so "does X have prerequisites?" has an answer)
+def course_details(html):
+    block = BeautifulSoup(html, "html.parser").select_one("div.resCalendarCourse")
+    details = []
+    for label in block.select("span.courseInfoLabels"):
+        name = label.get_text(strip=True).rstrip(":")
+        value = label.find_next_sibling("span", class_="courseInfoValues")
+        if name in COURSE_INFO and value:
+            details.append(f"{name}: {value.get_text(' ', strip=True).rstrip('.')}.")
+    for req in block.select("div.requisites"):
+        if req.h3 is None:
+            continue
+        words = list(req.stripped_strings)
+        details.append(f"{words[0]}: {' '.join(words[1:]) or 'None'}.")
+    return details
+
+
+#course page: one chunk with code, title, description, weekly contact, GPA weight and requisites
 def course_chunks(html, url):
     course = page_parser(html, url)
     parts = [f"{course['code']} {course['title']}."]
     if course["description"]:
         parts.append(course["description"])
-    if course["prereq_text"]:
-        parts.append(f"Prerequisites: {course['prereq_text']}")
+    parts.extend(course_details(html))
     return [chunk(" ".join(parts))]
 
 
