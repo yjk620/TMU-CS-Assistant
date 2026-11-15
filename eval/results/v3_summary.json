@@ -1,0 +1,33 @@
+{
+  "retriever": "v3",
+  "questions": 40,
+  "chunk_count": 983,
+  "corpus_fingerprint": "2584e0ec899f6856",
+  "ingest_seconds": 1060.0,
+  "by_type": {
+    "lookup": {
+      "source_recall": "10/10",
+      "refusal_correct": "10/10"
+    },
+    "program": {
+      "source_recall": "6/6",
+      "refusal_correct": "6/6"
+    },
+    "elective": {
+      "source_recall": "4/4",
+      "refusal_correct": "4/4"
+    },
+    "prereq_chain": {
+      "source_recall": "6/10",
+      "refusal_correct": "9/10"
+    },
+    "date_policy": {
+      "source_recall": "5/5",
+      "refusal_correct": "5/5"
+    },
+    "unanswerable": {
+      "source_recall": "n/a",
+      "refusal_correct": "5/5"
+    }
+  }
+}
