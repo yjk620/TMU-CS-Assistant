@@ -1,12 +1,20 @@
 # turns a question into the chunks Claude answers from: always 8 in total
 # 1. semester lookup: a question naming a semester gets that program chunk in slot 1
 # 2. the retriever (v1: vector search) fills the remaining k slots
-# v2 (full-text + vector, merged by Reciprocal Rank Fusion) and v3 (+ prerequisites) are added here later
+#    v1: vector search
+#    v2: full-text search + vector search, merged by Reciprocal Rank Fusion
+# v3 (+ prerequisites) is added here later
+
+import re
 
 from app import voyage
 from app.text import find_semester
 
 TOTAL_CHUNKS = 8
+CANDIDATES = 20  #how many chunks each ranking contributes to the v2 merge
+RRF_K = 60       #the standard Reciprocal Rank Fusion constant: score = 1 / (60 + rank)
+#a course code in stored form ("CPS 803"); same pattern the tsv column uses to join codes into one token
+STORED_CODE_RE = re.compile(r"\b([A-Z]{3,4}) (\d{3})\b")
 
 
 #the program chunk a question names ("3rd semester", "part-time semester 2", co-op work terms), or None
@@ -42,7 +50,56 @@ def retrieve_v1(conn, question, vector, k, exclude):
     return [row[0] for row in rows]
 
 
-RETRIEVERS = {"v1": retrieve_v1}
+#"CPS 803" -> "CPS803", matching how the tsv column stores codes (one token, "cps803")
+def join_codes(text):
+    return STORED_CODE_RE.sub(r"\1\2", text)
+
+
+#the question's course codes as tsv tokens, e.g. "cps714 | cps406" ("" if there are none)
+def code_tokens(question):
+    return " | ".join(f"{letters.lower()}{number}" for letters, number in STORED_CODE_RE.findall(question))
+
+
+#full-text ranking. websearch_to_tsquery joins words with AND, which fails on natural questions
+#("need & take & cps843" matches nothing), so words are OR-ed instead. ts_rank doesn't weigh rare words
+#above common ones, so chunks containing one of the question's course codes rank first,
+#then ts_rank on all the words breaks ties (normalized by chunk length)
+def text_ranked(conn, question, limit, exclude):
+    rows = conn.execute(
+        """
+        with q as (
+            select cast(replace(cast(websearch_to_tsquery('english', %(text)s) as text), '&', '|') as tsquery) as words,
+                   cast(nullif(%(codes)s, '') as tsquery) as codes
+        )
+        select id from chunks, q
+        where tsv @@ q.words and not (id = any(%(exclude)s))
+        order by coalesce(tsv @@ q.codes, false) desc, ts_rank(tsv, q.words, 1) desc, id
+        limit %(limit)s
+        """,
+        {"text": join_codes(question), "codes": code_tokens(question), "exclude": exclude, "limit": limit},
+    ).fetchall()
+    return [row[0] for row in rows]
+
+
+#Reciprocal Rank Fusion: each id scores 1 / (60 + rank) in every ranking it appears in; highest total first.
+#Uses ranks only, so cosine distance and ts_rank (different scales) never need comparing.
+#Ties keep the order of first appearance (vector ranking first)
+def rrf(*rankings):
+    scores = {}
+    for ranking in rankings:
+        for rank, chunk_id in enumerate(ranking, 1):
+            scores[chunk_id] = scores.get(chunk_id, 0) + 1 / (RRF_K + rank)
+    return sorted(scores, key=lambda chunk_id: -scores[chunk_id])
+
+
+#v2: merge the vector top 20 and the full-text top 20, keep the best k
+def retrieve_v2(conn, question, vector, k, exclude):
+    by_vector = retrieve_v1(conn, question, vector, CANDIDATES, exclude)
+    by_text = text_ranked(conn, question, CANDIDATES, exclude)
+    return rrf(by_vector, by_text)[:k]
+
+
+RETRIEVERS = {"v1": retrieve_v1, "v2": retrieve_v2}
 
 
 #the 8 chunks for a (code-normalized) question, in rank order, with their page url
