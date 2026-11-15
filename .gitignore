@@ -13,3 +13,6 @@ ROADMAP.md
 # Other
 logs/
 .DS_Store
+
+# eval: cached question embeddings (rebuilt on demand)
+eval/.cache/

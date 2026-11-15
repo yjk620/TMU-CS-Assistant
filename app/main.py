@@ -67,10 +67,11 @@ def answer_text(response):
 
 
 #one question in, one answer out; logs a row in queries
-def ask(question, retriever="v1", source="web"):
+#vector: the normalized question's embedding, if the caller already has it (eval/run.py)
+def ask(question, retriever="v1", source="web", vector=None):
     normalized = normalize_codes(question, subjects())
     with psycopg.connect(os.environ["DATABASE_URL"], autocommit=True) as conn:
-        chunks = retrieve(conn, normalized, retriever)
+        chunks = retrieve(conn, normalized, retriever, vector)
         response = client.messages.create(
             model=MODEL,
             max_tokens=MAX_TOKENS,

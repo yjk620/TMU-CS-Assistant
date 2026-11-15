@@ -22,9 +22,14 @@ def lookup_chunk(conn, question):
     return row[0] if row else None
 
 
+#the question's embedding (input_type "query", same model as the chunks)
+def embed_question(question):
+    return voyage.embed([question], "query")[0]
+
+
 #v1: the k chunks closest to the question by cosine distance (exact search, no index)
-def retrieve_v1(conn, question, k, exclude):
-    vector = "[" + ",".join(map(str, voyage.embed([question], "query")[0])) + "]"
+def retrieve_v1(conn, question, vector, k, exclude):
+    vector = "[" + ",".join(map(str, vector)) + "]"
     rows = conn.execute(
         """
         select id from chunks
@@ -41,12 +46,15 @@ RETRIEVERS = {"v1": retrieve_v1}
 
 
 #the 8 chunks for a (code-normalized) question, in rank order, with their page url
-def retrieve(conn, question, retriever="v1"):
+#vector: the question's embedding if already computed (eval reuses one per question across versions)
+def retrieve(conn, question, retriever="v1", vector=None):
+    if vector is None:
+        vector = embed_question(question)
     ids = []
     looked_up = lookup_chunk(conn, question)
     if looked_up is not None:
         ids.append(looked_up)
-    ids += RETRIEVERS[retriever](conn, question, TOTAL_CHUNKS - len(ids), ids)
+    ids += RETRIEVERS[retriever](conn, question, vector, TOTAL_CHUNKS - len(ids), ids)
 
     rows = conn.execute(
         """
