@@ -5,14 +5,17 @@ import argparse
 import datetime
 import functools
 import os
+from pathlib import Path
 
 import anthropic
 import psycopg
 from dotenv import load_dotenv
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from app.ingest import load_subjects
+from app.ratelimit import RateLimiter, client_ip
 from app.retrieve import retrieve
 from app.text import REFUSAL, is_refusal, normalize_codes
 
@@ -24,6 +27,9 @@ MODEL = "claude-haiku-5-5"
 EFFORT = "medium"
 MAX_TOKENS = 8000
 WEB_RETRIEVER = os.environ.get("RETRIEVER", "v1")
+#how many proxies sit in front of the app (1 on Render); 0 when running locally
+PROXY_HOPS = int(os.environ.get("PROXY_HOPS", "0"))
+CHAT_PAGE = Path(__file__).parent / "static" / "index.html"
 
 SYSTEM_PROMPT = f"""You answer students' questions about the Computer Science program at Toronto Metropolitan University (TMU), using only the excerpts from the 2026-27 Undergraduate Calendar and the CS department's curriculum page given with each question.
 
@@ -93,15 +99,24 @@ def ask(question, retriever="v1", source="web", vector=None):
 
 
 app = FastAPI(title="TMU CS Assistant")
+limiter = RateLimiter()
 
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=1, max_length=500)
 
 
+@app.get("/")
+def chat_page():
+    return FileResponse(CHAT_PAGE)
+
+
 @app.post("/ask")
-def ask_endpoint(request: AskRequest):
-    return ask(request.question, retriever=WEB_RETRIEVER, source="web")
+def ask_endpoint(body: AskRequest, request: Request):
+    ip = client_ip(request.headers.get("x-forwarded-for"), request.client.host if request.client else "", PROXY_HOPS)
+    if not limiter.allow(ip):
+        raise HTTPException(status_code=429, detail="Too many questions. Please wait a minute and try again.")
+    return ask(body.question, retriever=WEB_RETRIEVER, source="web")
 
 
 #command line, for smoke tests: python -m app.main "question" [--retriever v1]

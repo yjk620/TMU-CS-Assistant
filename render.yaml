@@ -1,0 +1,22 @@
+# Render Blueprint: one free web service running the FastAPI app (chat page at /, API at /ask)
+# Secrets are set in the Render dashboard, never committed (sync: false)
+services:
+  - type: web
+    name: tmu-cs-assistant
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.15"
+      - key: RETRIEVER
+        value: v3
+      - key: PROXY_HOPS
+        value: "1"
+      - key: DATABASE_URL
+        sync: false
+      - key: VOYAGE_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false

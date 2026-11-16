@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TMU CS Assistant</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+  h1 { font-size: 1.4rem; margin-bottom: .25rem; }
+  .sub, .notice { color: #555; font-size: .9rem; }
+  form { display: flex; gap: .5rem; margin: 1.25rem 0; }
+  input { flex: 1; padding: .6rem .75rem; font: inherit; border: 1px solid #bbb; border-radius: 6px; }
+  button { padding: .6rem 1rem; font: inherit; border: 0; border-radius: 6px; background: #004c9b; color: #fff; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: default; }
+  #answer { white-space: pre-wrap; }
+  #sources a { display: block; word-break: break-all; font-size: .9rem; }
+  .error { color: #a40000; }
+  .examples button { background: #eef3f9; color: #004c9b; margin: 0 .4rem .4rem 0; font-size: .85rem; padding: .35rem .6rem; }
+</style>
+</head>
+<body>
+<h1>TMU CS Assistant</h1>
+<p class="sub">Answers questions about the Computer Science program from the 2026–27 Undergraduate Calendar and the CS department's curriculum page, with sources. Not official academic advice: confirm with your program advisor.</p>
+
+<form id="ask">
+  <input id="question" maxlength="500" placeholder="e.g. What do I need before CPS 721?" required autofocus>
+  <button id="submit">Ask</button>
+</form>
+<div class="examples">
+  <button type="button">What do I take in 3rd semester?</button>
+  <button type="button">What are the prerequisites for CPS 803?</button>
+  <button type="button">When is the Winter 2027 exam period?</button>
+</div>
+
+<div id="answer"></div>
+<div id="sources"></div>
+
+<p class="notice">Questions and answers are logged to measure and improve answer quality. Don't include personal information.</p>
+
+<script>
+const form = document.getElementById("ask");
+const input = document.getElementById("question");
+const submit = document.getElementById("submit");
+const answer = document.getElementById("answer");
+const sources = document.getElementById("sources");
+
+for (const example of document.querySelectorAll(".examples button")) {
+  example.addEventListener("click", () => { input.value = example.textContent; form.requestSubmit(); });
+}
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  submit.disabled = true;
+  answer.className = "";
+  answer.textContent = "Thinking…";
+  sources.replaceChildren();
+  try {
+    const response = await fetch("/ask", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({question: input.value}),
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(typeof data.detail === "string" ? data.detail : "Something went wrong.");
+    answer.textContent = data.answer;  // textContent: the answer is never parsed as HTML
+    if (data.sources.length) {
+      const heading = document.createElement("p");
+      heading.textContent = "Pages searched:";
+      sources.append(heading);
+      for (const url of data.sources) {
+        const link = document.createElement("a");
+        link.href = url; link.textContent = url; link.target = "_blank"; link.rel = "noopener";
+        sources.append(link);
+      }
+    }
+  } catch (error) {
+    answer.className = "error";
+    answer.textContent = error.message;
+  } finally {
+    submit.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
