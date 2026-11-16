@@ -1,0 +1,98 @@
+{
+  "v1": {
+    "lookup": {
+      "right": 9,
+      "partly": 0,
+      "wrong": 1
+    },
+    "program": {
+      "right": 6,
+      "partly": 0,
+      "wrong": 0
+    },
+    "elective": {
+      "right": 4,
+      "partly": 0,
+      "wrong": 0
+    },
+    "prereq_chain": {
+      "right": 1,
+      "partly": 4,
+      "wrong": 5
+    },
+    "date_policy": {
+      "right": 4,
+      "partly": 1,
+      "wrong": 0
+    },
+    "unanswerable": {
+      "right": 5,
+      "partly": 0,
+      "wrong": 0
+    }
+  },
+  "v2": {
+    "lookup": {
+      "right": 9,
+      "partly": 0,
+      "wrong": 1
+    },
+    "program": {
+      "right": 6,
+      "partly": 0,
+      "wrong": 0
+    },
+    "elective": {
+      "right": 4,
+      "partly": 0,
+      "wrong": 0
+    },
+    "prereq_chain": {
+      "right": 2,
+      "partly": 4,
+      "wrong": 4
+    },
+    "date_policy": {
+      "right": 4,
+      "partly": 1,
+      "wrong": 0
+    },
+    "unanswerable": {
+      "right": 5,
+      "partly": 0,
+      "wrong": 0
+    }
+  },
+  "v3": {
+    "lookup": {
+      "right": 10,
+      "partly": 0,
+      "wrong": 0
+    },
+    "program": {
+      "right": 6,
+      "partly": 0,
+      "wrong": 0
+    },
+    "elective": {
+      "right": 4,
+      "partly": 0,
+      "wrong": 0
+    },
+    "prereq_chain": {
+      "right": 8,
+      "partly": 1,
+      "wrong": 1
+    },
+    "date_policy": {
+      "right": 4,
+      "partly": 1,
+      "wrong": 0
+    },
+    "unanswerable": {
+      "right": 5,
+      "partly": 0,
+      "wrong": 0
+    }
+  }
+}

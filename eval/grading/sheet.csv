@@ -1,6 +1,6 @@
 row,question_id,type,question,expected_sources,answer,grade,note
-1,34,date_policy,When is the Winter 2027 exam period?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The Winter 2027 Undergraduate Examination Period runs from April 19, 2027 to May 1, 2027. The examination period includes Saturdays and Sundays. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/)",,
-2,7,lookup,Can I get credit for both CPS 109 and CPS 106?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/,"No. CPS 109 and CPS 106 are antirequisites of each other, so you can't receive credit for both. The 2026–27 Undergraduate Calendar lists CPS 106 as an antirequisite of CPS 109 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/) and CPS 109 as an antirequisite of CPS 106 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/).",,
+1,34,date_policy,When is the Winter 2027 exam period?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The Winter 2027 Undergraduate Examination Period runs from April 19, 2027 to May 1, 2027. The examination period includes Saturdays and Sundays. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/)",right,
+2,7,lookup,Can I get credit for both CPS 109 and CPS 106?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/,"No. CPS 109 and CPS 106 are antirequisites of each other, so you can't receive credit for both. The 2026–27 Undergraduate Calendar lists CPS 106 as an antirequisite of CPS 109 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/) and CPS 109 as an antirequisite of CPS 106 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/).",right,
 3,11,program,What do I take in 3rd semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"For the **full-time, four-year program**, third semester includes:
 
 - **Required:**
@@ -12,47 +12,47 @@ row,question_id,type,question,expected_sources,answer,grade,note
 
 Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
-4,34,date_policy,When is the Winter 2027 exam period?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The Winter 2027 examination period runs from April 19, 2027 to May 1, 2027, and includes Saturdays and Sundays. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/)",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
+4,34,date_policy,When is the Winter 2027 exam period?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The Winter 2027 examination period runs from April 19, 2027 to May 1, 2027, and includes Saturdays and Sundays. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/)",right,
 5,35,date_policy,How do I withdraw from a course?,https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/enrolment/,"**How to withdraw from a course:** Withdraw online through MyServiceHub (my.torontomu.ca) by the University deadline shown under Significant Dates. Students are academically and financially responsible for course enrolments and fees until they withdraw by the deadline. Non-attendance does not remove a course enrolment or fee charge. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/enrolment/)
 
-The excerpts don't give the Fall 2026 course withdrawal deadline. The Significant Dates section of the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/) lists the deadlines. Don't confuse this with the Fall 2026 program withdrawal deadline of November 20, 2026, which applies to withdrawing from the whole program, not to individual courses.",,
+The excerpts don't give the Fall 2026 course withdrawal deadline. The Significant Dates section of the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/) lists the deadlines. Don't confuse this with the Fall 2026 program withdrawal deadline of November 20, 2026, which applies to withdrawing from the whole program, not to individual courses.",partly,how-to right; wrongly says Nov 20 is only for program withdrawal (it is also the Fall course drop deadline)
 6,7,lookup,Can I get credit for both CPS 109 and CPS 106?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/,"No. CPS 109 and CPS 106 are antirequisites of each other, so you can't get credit for both.
 
 - CPS 109 Computer Science I lists CPS 106 as an antirequisite. (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/)
-- CPS 106 Introduction to Multimedia Computation lists CPS 109 as an antirequisite. (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/)",,
+- CPS 106 Introduction to Multimedia Computation lists CPS 109 as an antirequisite. (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/)",right,
 7,21,prereq_chain,I've finished CPS 109. What do I need before I can take CPS 305?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,"CPS 305 (Data Structures) requires **CPS 209**. Completing CPS 109 alone does not meet that prerequisite, so you'd need CPS 209 first.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/",right,
 8,3,lookup,How many lecture hours a week is MTH 207?,https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/207/,"MTH 207 has **4 lecture hours** per week, plus 1 tutorial hour.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/207/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/207/",right,
 9,35,date_policy,How do I withdraw from a course?,https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/enrolment/,"To withdraw from a course, go online through MyServiceHub (my.torontomu.ca) by the appropriate University deadline shown under Significant Dates. Non-attendance does not remove course enrolments or fee charges, so you are responsible for them unless you withdraw by the deadline. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/enrolment/)
 
-The excerpts don't list the Fall 2026 course withdrawal deadline. The Fall 2026 deadline for withdrawing from a *program* is November 20, 2026, which is a different process. Check the Significant Dates page for the course deadline (https://www.torontomu.ca/calendar/2026-2027/dates/).",,
+The excerpts don't list the Fall 2026 course withdrawal deadline. The Fall 2026 deadline for withdrawing from a *program* is November 20, 2026, which is a different process. Check the Significant Dates page for the course deadline (https://www.torontomu.ca/calendar/2026-2027/dates/).",partly,how-to right; wrongly says Nov 20 is only for program withdrawal (it is also the Fall course drop deadline)
 10,2,lookup,What are the prerequisites for CPS 721?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/,"CPS 721 requires **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. You need both CPS 305 and CPS 420, plus either MTH 380 or MTH 304.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/",right,
 11,17,elective,Can CS students take PCS 111 as a liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,"No. The 2026–27 Undergraduate Calendar lists PCS 111 among the Table A lower-level liberal studies restrictions for Computer Science, so it is not available for credit to CS students.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/",right,
 12,30,prereq_chain,"Do I need MTH 207 before MTH 380, and is MTH 380 required for CPS 721?",https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/,I don't know - check with your program advisor.,wrong,auto
 13,35,date_policy,How do I withdraw from a course?,https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/enrolment/,"To withdraw from a course, go to MyServiceHub (my.torontomu.ca) and withdraw online by the appropriate University deadline shown under Significant Dates. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/enrolment/).
 
 The calendar excerpts I have don't list the Fall 2026 course-withdrawal deadline. The Fall 2026 deadline of November 20, 2026 is for withdrawing from a program, not a course (https://www.torontomu.ca/calendar/2026-2027/dates/). Check the Significant Dates section for the course deadline.
 
-Also note that you're academically and financially responsible for course enrolments and fees unless you withdraw by the deadline, and non-attendance does not remove a course enrolment or fee charge. For Chang School courses, use the current Chang School calendar for drop deadlines.",,
-14,28,prereq_chain,Is CPS 393 needed to get into CPS 706?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"No, not directly. CPS 706 requires CPS 590 (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/). CPS 590 requires CPS 305 and CPS 393 (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/). So CPS 393 is needed before CPS 706, through CPS 590.",,
+Also note that you're academically and financially responsible for course enrolments and fees unless you withdraw by the deadline, and non-attendance does not remove a course enrolment or fee charge. For Chang School courses, use the current Chang School calendar for drop deadlines.",partly,how-to right; wrongly says Nov 20 is only for program withdrawal (it is also the Fall course drop deadline)
+14,28,prereq_chain,Is CPS 393 needed to get into CPS 706?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"No, not directly. CPS 706 requires CPS 590 (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/). CPS 590 requires CPS 305 and CPS 393 (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/). So CPS 393 is needed before CPS 706, through CPS 590.",right,
 15,1,lookup,what is cps803 about?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/,"CPS 803 Machine Learning covers the study of algorithms that can learn from data or prior experience. The course develops the ability to apply machine learning algorithms to different problem domains and teaches the theoretical basis for those algorithms. It has 3 hours of lecture per week and is worth 1.00 course count.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/",,
-16,4,lookup,does cps 590 have a lab,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"Yes. CPS 590 Operating Systems I has a 1-hour weekly lab, plus 3 hours of lecture. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/)",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/",right,
+16,4,lookup,does cps 590 have a lab,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"Yes. CPS 590 Operating Systems I has a 1-hour weekly lab, plus 3 hours of lecture. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/)",right,
 17,39,unanswerable,What are the second-year required courses for Nursing?,,I don't know - check with your program advisor.,right,auto
 18,1,lookup,what is cps803 about?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/,"CPS 803 Machine Learning studies algorithms that learn from data or prior experience. The course builds the ability to apply machine learning algorithms to different problem domains and covers the theoretical basis for those algorithms. The calendar lists applications in medicine, autonomous systems, computational biology, finance, computer vision, and other domains. It has 3 hours of lecture per week.
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/)",,
-19,34,date_policy,When is the Winter 2027 exam period?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The Winter 2027 examination period runs from April 19, 2027 to May 1, 2027, and includes Saturdays and Sundays. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/).",,
-20,5,lookup,What are the antirequisites for CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/,"According to the 2026–27 Undergraduate Calendar, the antirequisite for CPS 633 is **CPS 471**. (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/)",right,
+19,34,date_policy,When is the Winter 2027 exam period?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The Winter 2027 examination period runs from April 19, 2027 to May 1, 2027, and includes Saturdays and Sundays. Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/).",right,
+20,5,lookup,What are the antirequisites for CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/,"According to the 2026–27 Undergraduate Calendar, the antirequisite for CPS 633 is **CPS 471**. (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/)",right,
 21,14,program,What courses are in my 6th semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Full-time, four-year program, Sixth Semester** (from the CS department's curriculum page, https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/):
 
 - **Required:** CPS 616 Algorithms; CPS 706 Computer Networks I
@@ -61,7 +61,7 @@ Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/
 - **Open electives:** One course from the Open Elective Table. This cannot be a CPS course numbered between CPS 100 and CPS 499, or any ITM course other than ITM 330, ITM 350, ITM 410, or ITM 735.
 - **Optional:** A Concentration may be selected from Table I (Computer Science Group), starting in 5th semester.
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 22,13,program,what do part-time students take in semester 2?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"For the **part-time program, second semester**, the CS department's curriculum page lists:
 
 - **Required:** CCPS 209 Computer Science II; CCPS 310 Computer Organization II; CCPS 412 Social Issues, Ethics and Professionalism; MTH 207 Calculus and Computational Methods I
@@ -69,23 +69,23 @@ The curriculum page shows the current curriculum, which can differ for students 
 
 Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 23,7,lookup,Can I get credit for both CPS 109 and CPS 106?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/,"No, you can't get credit for both. CPS 109 lists CPS 106 as an antirequisite, and CPS 106 lists CPS 109 as an antirequisite, so taking both isn't allowed.
 
 Sources: the 2026–27 Undergraduate Calendar:
 - https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/
-- https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/",,
+- https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/106/",right,
 24,28,prereq_chain,Is CPS 393 needed to get into CPS 706?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,I don't know - check with your program advisor.,wrong,auto
 25,32,date_policy,What's the last day to add or swap a Winter 2027 class?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The last day to add or swap a Winter 2027 class depends on the class type:
 
 - **Winter 2027 classes other than Engineering and Specified Architectural Science classes:** January 29, 2027
 - **Engineering classes offered in ENGR sessions:** January 22, 2027
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",right,
 26,29,prereq_chain,What is the shortest path from CPS 109 to CPS 510?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/510/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,I don't know - check with your program advisor.,wrong,auto
 27,2,lookup,What are the prerequisites for CPS 721?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/,"CPS 721 (Artificial Intelligence I) requires **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. In other words, you need both CPS 305 and CPS 420, plus either MTH 380 or MTH 304.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/",right,
 28,29,prereq_chain,What is the shortest path from CPS 109 to CPS 510?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/510/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,"The shortest path is **CPS 109 → CPS 209 → CPS 305 → CPS 510**, which is three courses after CPS 109:
 
 1. **CPS 209** requires CPS 109 or CPS 106. CPS 109 satisfies this. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/)
@@ -94,13 +94,13 @@ Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/
 
 The other option for CPS 510, COE 428 and COE 528, both require COE 318 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-engineering/COE/428/ and https://www.torontomu.ca/calendar/2026-2027/courses/computer-engineering/COE/528/), so it is a longer route.
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 29,4,lookup,does cps 590 have a lab,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"CPS 590 Operating Systems I has a 1-hour lab each week, plus 3 hours of lecture. Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 30,8,lookup,What's CPS-420 about?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/,"CPS 420 Discrete Structures introduces discrete structures as they apply to design and analysis. Topics include proof techniques, induction and recursion, graphs and trees and their applications in computing, finite automata and regular expressions, and counting (progressions, permutations and combinations, modular arithmetic). The course has 3 lecture hours and 1 lab hour per week.
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/)",right,
 31,25,prereq_chain,can i take cps721 if I only have CPS 305 and MTH 207?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"No. The calendar lists the prerequisites for CPS 721 as **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. You have CPS 305, but you're missing CPS 420, and MTH 207 doesn't satisfy the MTH 380/MTH 304 requirement.
 
 To work toward it:
@@ -109,16 +109,16 @@ To work toward it:
 
 Once you have CPS 420 and MTH 380 (or MTH 304), you'd meet CPS 721's prerequisites.
 
-Sources: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/, and https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/",,
+Sources: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/, and https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/",right,
 32,5,lookup,What are the antirequisites for CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/,"CPS 633 (Computer Security) lists **CPS 471** as its antirequisite. That means you can't take CPS 633 if you have credit for CPS 471.
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/)",right,
 33,19,elective,Can I use CPS 650 as an upper-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/,"No. For Computer Science students, CPS 650 is not available for liberal studies credit. The 2026–27 Undergraduate Calendar's Table B restrictions for Computer Science list CPS 650 as not available for credit (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/). It appears in the general Table B upper-level list, but the Computer Science restriction takes precedence.
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 34,31,date_policy,When is the last day to drop a Fall 2026 course with a full refund?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The last day to drop a Fall 2026 undergraduate course with a full refund of fees was **September 18, 2026**. That date has already passed, as today is November 15, 2026. The next Fall deadline, November 20, 2026, is for dropping a course with no refund.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",right,
 35,13,program,what do part-time students take in semester 2?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"For the **part-time** Computer Science program, second semester includes:
 
 - **Required:** CCPS 209 Computer Science II, CCPS 310 Computer Organization II, CCPS 412 Social Issues, Ethics and Professionalism, MTH 207 Calculus and Computational Methods I
@@ -126,12 +126,12 @@ Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/
 
 Non-CPS courses may be taken through day-school or their Chang School alternative.
 
-Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 36,30,prereq_chain,"Do I need MTH 207 before MTH 380, and is MTH 380 required for CPS 721?",https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/,"**MTH 207 before MTH 380:** I don't know - check with your program advisor.
 
 **MTH 380 for CPS 721:** Yes, unless you take MTH 304 instead. According to the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/), CPS 721 requires CPS 305 and CPS 420 and (MTH 380 or MTH 304).
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",partly,CPS 721 part right; refuses the MTH 207 -> MTH 380 part
 37,30,prereq_chain,"Do I need MTH 207 before MTH 380, and is MTH 380 required for CPS 721?",https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/,"**MTH 380:** Not strictly. Its prerequisite is MTH 131 or MTH 207, so either course is enough. MTH 207 is one option, not a requirement (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/).
 
 **CPS 721:** No, MTH 380 isn't strictly required. The prerequisites are CPS 305 and CPS 420 and (MTH 380 or MTH 304), so you need either MTH 380 or MTH 304 (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/).
@@ -139,52 +139,52 @@ The curriculum page shows the current curriculum, which can differ for students 
 To reach CPS 721 through these courses, you'd need:
 - CPS 305, which requires CPS 209 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/)
 - CPS 420, which requires CPS 305 and MTH 110 (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/)
-- MTH 380 or MTH 304, with MTH 380 requiring MTH 131 or MTH 207 (https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/)",,
+- MTH 380 or MTH 304, with MTH 380 requiring MTH 131 or MTH 207 (https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/)",right,
 38,9,lookup,What is the GPA weight of CPS 406?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/406/,I don't know - check with your program advisor.,wrong,auto
 39,24,prereq_chain,I've done CPS 209 and MTH 110. What else do I need before CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/,"CPS 633 requires **CPS 420**, according to the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/). Your CPS 209 and MTH 110 don't satisfy that requirement by themselves.
 
-I don't know whether CPS 209 and MTH 110 are enough for CPS 420, because its prerequisites aren't in the excerpts I have. I don't know - check with your program advisor.",,
+I don't know whether CPS 209 and MTH 110 are enough for CPS 420, because its prerequisites aren't in the excerpts I have. I don't know - check with your program advisor.",partly,gets CPS 420 but not that CPS 420 needs CPS 305 (CPS 209 + MTH 110 aren't enough)
 40,32,date_policy,What's the last day to add or swap a Winter 2027 class?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The last day to add or swap a Winter 2027 class depends on the class type:
 
 - **Most undergraduate classes** (other than Engineering and specified Architectural Science classes): **January 29, 2027**
 - **Engineering classes offered in ENGR sessions:** **January 22, 2027**
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",right,
 41,10,lookup,Does MTH 108 have any prerequisites?,https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/,"MTH 108 (Linear Algebra) has no prerequisites. The calendar lists ""Prerequisites: None"" for it.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/",right,
 42,23,prereq_chain,Can I take CPS 706 right after CPS 305?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"CPS 706 lists **CPS 590** as its only prerequisite. CPS 305 is not listed, so the calendar doesn't say whether CPS 305 alone is enough. You would need to have completed CPS 590 before CPS 706.
 
 Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/)
 
-I don't know - check with your program advisor.",,
+I don't know - check with your program advisor.",partly,right fact (needs CPS 590) but hedges and adds the refusal sentence
 43,23,prereq_chain,Can I take CPS 706 right after CPS 305?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"Based on the 2026–27 Undergraduate Calendar, CPS 706 Computer Networks I has one prerequisite: **CPS 590**. CPS 305 is not listed, so it isn't required for CPS 706. Whether you can take CPS 706 right after CPS 305 depends on whether you have completed CPS 590 by then. The excerpts don't give CPS 590's prerequisites, so I can't confirm the timing.
 
 Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/)
 
 The curriculum page lists CPS 706 in the sixth semester of the full-time, four-year program. The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.
 
-Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)",,
+Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)",partly,right fact (needs CPS 590) but can't say what 590 needs
 44,27,prereq_chain,I've done MTH 108 and MTH 207. What else do I need for CPS 803?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"For CPS 803 you still need **CPS 305** and **one of MTH 380 or MTH 304**. The prerequisite is MTH 108 and MTH 207 and CPS 305 and (MTH 380 or MTH 304).
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/",partly,direct prerequisites right; misses that CPS 305 needs CPS 209
 45,16,program,What courses do I need to take for the CS degree?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"The full course requirements are listed on the CS department's curriculum page: https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/
 
 The curriculum page is organized by semester. You can ask me about a specific semester, such as ""What courses are in third semester?""
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
-46,10,lookup,Does MTH 108 have any prerequisites?,https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/,"No. MTH 108 Linear Algebra has no prerequisites, and it has no co-requisites. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/)",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
+46,10,lookup,Does MTH 108 have any prerequisites?,https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/,"No. MTH 108 Linear Algebra has no prerequisites, and it has no co-requisites. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/)",right,
 47,21,prereq_chain,I've finished CPS 109. What do I need before I can take CPS 305?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,I don't know - check with your program advisor.,wrong,auto
 48,33,date_policy,When is study week in the winter term?,https://www.torontomu.ca/calendar/2026-2027/dates/,"Study Week for the 2026–27 winter term is **February 16 to February 19, 2027**. Undergraduate and Chang School students have Study Week then, and Chang School Saturday classes resume on February 20.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",right,
 49,18,elective,Is ENG 104 a lower-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,"Yes. ENG 104 The Short Story is listed in Table A - Lower Level Liberal Studies in the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/).
 
-The course description in the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/english/ENG/104/) notes that it is not available to ACS English Option, BA English, English-Philosophy, and English-History double major students.",,
+The course description in the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/english/ENG/104/) notes that it is not available to ACS English Option, BA English, English-Philosophy, and English-History double major students.",right,
 50,36,unanswerable,Who teaches CPS 590 this winter?,,I don't know - check with your program advisor.,right,auto
 51,31,date_policy,When is the last day to drop a Fall 2026 course with a full refund?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The last day to drop a Fall 2026 undergraduate course with a full refund of fees was **September 18, 2026**. That date has already passed, as today is November 15, 2026.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",right,
 52,22,prereq_chain,"Starting from CPS 109, which courses do I need, in order, to reach CPS 590?",https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/393/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,"**Path from CPS 109 to CPS 590:**
 
 1. **CPS 109** (Computer Science I), which you already have.
@@ -194,20 +194,20 @@ Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/
 
 Sources: the 2026–27 Undergraduate Calendar, [CPS 109](https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/109/), [CPS 209](https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/), [CPS 305](https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/), [CPS 393](https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/393/), and [CPS 590](https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/).
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 53,20,elective,How many Table I courses do I have to take from the Computer Science Group?,https://www.torontomu.ca/calendar/2026-2027/programs/science/computer_sci/table_i/,"You must take a **minimum of five and a maximum of seven** courses from the Computer Science Group in Table I. Table I requires eight courses in total, and the other groups have their own limits: at least one and at most three from the Engineering/Science/Business Group, and no more than two from the Mathematics Group.
 
 Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/programs/science/computer_sci/table_i/
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 54,31,date_policy,When is the last day to drop a Fall 2026 course with a full refund?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The last day to drop a Fall 2026 undergraduate course with a full refund of fees was **September 18, 2026**. That date has already passed as of today, November 15, 2026.
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/)",right,
 55,19,elective,Can I use CPS 650 as an upper-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/,"No. CPS 650 cannot be used for upper-level liberal studies credit in Computer Science. The 2026–27 Undergraduate Calendar lists it among the ""Computer Science restrictions"" for Table B - Upper Level Liberal Studies, along with ELE 900, GEO 609, MTH 511 and MTH 599: ""CPS 650, ELE 900, GEO 609, MTH 511 and MTH 599 are not available for credit.""
 
 Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 56,14,program,What courses are in my 6th semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Full-time, four-year program, Sixth Semester** (from the CS department's curriculum page, https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/):
 
 - **Required:** CPS 616 Algorithms; CPS 706 Computer Networks I
@@ -219,13 +219,13 @@ An optional concentration may be selected from Table I (Computer Science Group) 
 
 If you are in the part-time program, the sixth semester is different: CCPS 616 Algorithms, CCPS 706 Computer Networks I, two professionally-related courses from Table I, and one Table B (Upper Level Liberal Studies) course.
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 57,17,elective,Can CS students take PCS 111 as a liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,"No. PCS 111 (Physics in the News) is not available for liberal studies credit to Computer Science students. The Table A Lower Level Liberal Studies restrictions for Computer Science state that ""PCS 111 and SCI courses are not available for credit.""
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/",right,
 58,33,date_policy,When is study week in the winter term?,https://www.torontomu.ca/calendar/2026-2027/dates/,"The winter term study week is **February 16–19, 2027** (Study Week for undergraduate and Chang School students). Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/
 
-The calendar also lists a study week of February 17–20, 2026, which falls before the 2026–27 winter term.",,
+The calendar also lists a study week of February 17–20, 2026, which falls before the 2026–27 winter term.",right,
 59,29,prereq_chain,What is the shortest path from CPS 109 to CPS 510?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/510/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,"CPS 109 leads to CPS 209, which is a prerequisite step toward CPS 510, but the excerpts don't show the full path:
 
 - **CPS 109 → CPS 209:** CPS 209 requires ""CPS 109 or CPS 106,"" so CPS 109 alone is enough. (Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/)
@@ -235,7 +235,7 @@ The excerpts don't give the prerequisites for CPS 305, COE 428, or COE 528, so I
 
 I don't know - check with your program advisor.
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",partly,correct one-level facts but no path; ends with the refusal sentence
 60,24,prereq_chain,I've done CPS 209 and MTH 110. What else do I need before CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/,I don't know - check with your program advisor.,wrong,auto
 61,14,program,What courses are in my 6th semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Full-time, four-year program, Sixth Semester** (from the CS department's curriculum page: https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)
 
@@ -245,11 +245,11 @@ The curriculum page shows the current curriculum, which can differ for students 
 - **Open electives:** One course from the Open Elective Table. This cannot be a CPS course between CPS 100 and CPS 499, or an ITM course other than ITM 330, ITM 350, ITM 410, or ITM 735.
 - **Optional:** A Concentration may be selected from Table I (Computer Science Group), starting in 5th semester.
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
-62,25,prereq_chain,can i take cps721 if I only have CPS 305 and MTH 207?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"No, not with only CPS 305 and MTH 207. According to the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/), CPS 721 requires **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. You have CPS 305, but you would also need CPS 420 and either MTH 380 or MTH 304. MTH 207 doesn't satisfy the requirement.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
+62,25,prereq_chain,can i take cps721 if I only have CPS 305 and MTH 207?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"No, not with only CPS 305 and MTH 207. According to the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/), CPS 721 requires **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. You have CPS 305, but you would also need CPS 420 and either MTH 380 or MTH 304. MTH 207 doesn't satisfy the requirement.",right,
 63,23,prereq_chain,Can I take CPS 706 right after CPS 305?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"No. CPS 706 requires CPS 590, not CPS 305. CPS 590 requires both CPS 305 and CPS 393, so you'd need to complete CPS 305 and CPS 393 first, then CPS 590, before taking CPS 706.
 
-Sources: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ and https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/",,
+Sources: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ and https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/",right,
 64,15,program,When are the work terms in the co-op program?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"Work terms are scheduled in the sample sequences on the curriculum page, which show two options for the Full Time 5 Year Co-op Option:
 
 **Option A**
@@ -270,27 +270,27 @@ The department may waive the WKT 503 requirement. All work term courses are grad
 
 Sources: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). The 2026–27 Undergraduate Calendar course pages for WKT 103 (https://www.torontomu.ca/calendar/2026-2027/courses/work-term/WKT/103/), WKT 203 (https://www.torontomu.ca/calendar/2026-2027/courses/work-term/WKT/203/), WKT 303 (https://www.torontomu.ca/calendar/2026-2027/courses/work-term/WKT/303/), WKT 403 (https://www.torontomu.ca/calendar/2026-2027/courses/work-term/WKT/403/), and WKT 503 (https://www.torontomu.ca/calendar/2026-2027/courses/work-term/WKT/503/) confirm the course titles and pass/fail grading, but do not give their timing.
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 65,27,prereq_chain,I've done MTH 108 and MTH 207. What else do I need for CPS 803?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"For CPS 803 Machine Learning, you still need **CPS 305 and one of MTH 380 or MTH 304**. The full prerequisite is MTH 108 and MTH 207 and CPS 305 and (MTH 380 or MTH 304), so you have the two MTH courses and need CPS 305 plus either MTH 380 or MTH 304.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/",partly,direct prerequisites right; misses that CPS 305 needs CPS 209
 66,20,elective,How many Table I courses do I have to take from the Computer Science Group?,https://www.torontomu.ca/calendar/2026-2027/programs/science/computer_sci/table_i/,"For the Computer Science Core Elective Table I, you must take a minimum of **5** and a maximum of **7** courses from the Computer Science Group. These count toward the eight (8) Table I courses required in total.
 
 Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/programs/science/computer_sci/table_i/
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 67,8,lookup,What's CPS-420 about?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/,"CPS 420 Discrete Structures introduces discrete structures as they apply to design and analysis. It covers proof techniques, induction and recursion, graphs and trees and their applications in computing, finite automata and regular expressions, and counting (progressions, permutations and combinations, and modular arithmetic).
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/)",right,
 68,26,prereq_chain,I've only done CPS 209. What do I still need before CPS 616?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/616/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/,I don't know - check with your program advisor.,wrong,auto
 69,16,program,What courses do I need to take for the CS degree?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"You can find the full Computer Science course requirements on the CS department's curriculum page: https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/
 
 For specific semester requirements, ask about a particular semester, such as ""What courses are in third semester?""
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 70,32,date_policy,What's the last day to add or swap a Winter 2027 class?,https://www.torontomu.ca/calendar/2026-2027/dates/,"For most Winter 2027 undergraduate classes, the last day to add or swap is **January 29, 2027**. For Engineering classes offered in ENGR sessions, it's **January 22, 2027**.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/dates/",right,
 71,22,prereq_chain,"Starting from CPS 109, which courses do I need, in order, to reach CPS 590?",https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/393/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,"From the excerpts, I can confirm only part of the chain:
 
 - **CPS 109 Computer Science I** → **CPS 209 Computer Science II** requires CPS 109 or CPS 106 (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/).
@@ -300,19 +300,19 @@ The excerpts don't give the prerequisites for CPS 305 or CPS 393, so I can't giv
 
 I don't know - check with your program advisor.
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",partly,"correct one-level facts (209, 590) but no path; ends with the refusal sentence"
 72,20,elective,How many Table I courses do I have to take from the Computer Science Group?,https://www.torontomu.ca/calendar/2026-2027/programs/science/computer_sci/table_i/,"You must take a minimum of five and a maximum of seven courses from the Computer Science Group. These count toward the eight courses required in Table I.
 
 Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/programs/science/computer_sci/table_i/)
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 73,25,prereq_chain,can i take cps721 if I only have CPS 305 and MTH 207?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"No. CPS 721 requires **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. With only CPS 305 and MTH 207, you'd still need CPS 420 and either MTH 380 or MTH 304. MTH 207 doesn't satisfy the requirement.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/",right,
 74,40,unanswerable,What is the class average in CPS 616?,,I don't know - check with your program advisor.,right,auto
 75,1,lookup,what is cps803 about?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/,"CPS 803 Machine Learning covers the study of algorithms that learn from data or prior experience. The course develops the ability to apply machine learning algorithms to different problem domains and teaches the theoretical basis for those algorithms. It has applications in medicine, autonomous systems, computational biology, finance, computer vision, and other domains.
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/)",right,
 76,12,program,Which courses are required in first semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Full-time, four-year program, first semester** (from the CS department's curriculum page, https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/):
 
 - **Required:**
@@ -322,7 +322,7 @@ Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/
 - **Required Group 1:** one of BLG 143 Biology I, CHY 103 General Chemistry I, or PCS 110 Physics
 - **Liberal Studies:** one course from Table A (Lower Level Liberal Studies)
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years. You can ask about a specific semester if you want more detail.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years. You can ask about a specific semester if you want more detail.",right,
 77,11,program,What do I take in 3rd semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Full-time, four-year program, third semester:**
 
 - **Required:**
@@ -334,11 +334,11 @@ The curriculum page shows the current curriculum, which can differ for students 
 
 Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
-78,18,elective,Is ENG 104 a lower-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,"Yes. ENG 104 The Short Story is listed under Table A - Lower Level Liberal Studies in the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/). The course description in the calendar (https://www.torontomu.ca/calendar/2026-2027/courses/english/ENG/104/) says the course is not available to ACS English Option, BA English, English-Philosophy, and English-History double major students.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
+78,18,elective,Is ENG 104 a lower-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,"Yes. ENG 104 The Short Story is listed under Table A - Lower Level Liberal Studies in the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/). The course description in the calendar (https://www.torontomu.ca/calendar/2026-2027/courses/english/ENG/104/) says the course is not available to ACS English Option, BA English, English-Philosophy, and English-History double major students.",right,
 79,6,lookup,What does the Data Structures course cover?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/,"CPS 305 Data Structures covers these data structures: stacks, queues, lists, trees, and graphs. The algorithm topics are searching, sorting, hashing, algorithm design, greedy approaches, dynamic programming, recursion, and complexity analysis.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/",right,
 80,13,program,what do part-time students take in semester 2?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Part-time program, second semester** (from the CS department's curriculum page, https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/):
 
 - **Required:**
@@ -348,7 +348,7 @@ Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/
   - MTH 207 Calculus and Computational Methods I
 - **Liberal Studies:** One course from Table A (Lower Level Liberal Studies). Non-CPS courses may be taken through day-school or their Chang School alternative.
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 81,27,prereq_chain,I've done MTH 108 and MTH 207. What else do I need for CPS 803?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/,"For CPS 803, you still need:
 
 - **CPS 305 Data Structures**, and
@@ -360,10 +360,10 @@ The calendar excerpts don't list prerequisites for MTH 380 or MTH 304. I don't k
 
 Sources: the 2026–27 Undergraduate Calendar:
 - CPS 803: https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/803/
-- CPS 305: https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/",,
+- CPS 305: https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/",right,
 82,5,lookup,What are the antirequisites for CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/,"CPS 633 (Computer Security) has one antirequisite: **CPS 471**.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/",right,
 83,15,program,When are the work terms in the co-op program?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"The co-op work terms are in the sample schedules on the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). These are sample schedules for the Full Time 5 Year Co-op Option:
 
 **Option A**
@@ -380,21 +380,21 @@ Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/
 - WKT 403: Winter, Year 4
 - WKT 503: Spring/Summer, Year 4
 
-The page says these courses are graded pass/fail only, and the Department may waive the WKT 503 requirement. The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The page says these courses are graded pass/fail only, and the Department may waive the WKT 503 requirement. The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 84,17,elective,Can CS students take PCS 111 as a liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,"No. The 2026–27 Undergraduate Calendar lists PCS 111 among the Computer Science restrictions for Table A (Lower Level Liberal Studies), so it is not available for credit to CS students (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/).
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
-85,18,elective,Is ENG 104 a lower-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,Yes. The 2026–27 Undergraduate Calendar lists ENG 104 The Short Story in Table A - Lower Level Liberal Studies (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/).,,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
+85,18,elective,Is ENG 104 a lower-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/,Yes. The 2026–27 Undergraduate Calendar lists ENG 104 The Short Story in Table A - Lower Level Liberal Studies (https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_a/).,right,
 86,4,lookup,does cps 590 have a lab,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"Yes. CPS 590 Operating Systems I has a weekly lab of 1 hour, alongside 3 hours of lecture.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/",right,
 87,38,unanswerable,What did CS students take in 3rd semester under the 2019-2020 calendar?,,I don't know - check with your program advisor.,right,auto
 88,33,date_policy,When is study week in the winter term?,https://www.torontomu.ca/calendar/2026-2027/dates/,"Study Week for undergraduate and Chang School students in the winter term is:
 
 - **February 17 to 20, 2026**, with Chang School Saturday classes resuming February 21, 2026.
 - **February 16 to 19, 2027**, with Chang School Saturday classes resuming February 20, 2027.
 
-Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/)",,
+Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/dates/)",right,
 89,12,program,Which courses are required in first semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"For the **full-time, four-year program**, first semester includes:
 
 - **Required:**
@@ -409,26 +409,26 @@ Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/
 
 No open electives or professionally-related courses are listed for this semester.
 
-Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 90,37,unanswerable,What room is the CPS 305 lecture in?,,I don't know - check with your program advisor.,right,auto
 91,28,prereq_chain,Is CPS 393 needed to get into CPS 706?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/,"Not directly. CPS 706 requires only **CPS 590**. CPS 590 requires **CPS 305 and CPS 393**, so CPS 393 is needed before you can take CPS 706, through CPS 590:
 
 - CPS 393 → CPS 590 (per the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/)
-- CPS 590 → CPS 706 (per the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/)",,
+- CPS 590 → CPS 706 (per the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/706/)",right,
 92,22,prereq_chain,"Starting from CPS 109, which courses do I need, in order, to reach CPS 590?",https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/590/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/393/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/209/,I don't know - check with your program advisor.,wrong,auto
 93,19,elective,Can I use CPS 650 as an upper-level liberal studies course?,https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/,"No. For Computer Science, the 2026–27 Undergraduate Calendar lists CPS 650 under its Table B restrictions, meaning it is ""not available for credit."" Although CPS 650 appears in the general list of upper-level liberal studies courses, it cannot be used to fulfill your liberal studies requirement as a CS student.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/liberal-studies/table_b/",right,
 94,24,prereq_chain,I've done CPS 209 and MTH 110. What else do I need before CPS 633?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/ https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/,"CPS 633 Computer Security lists **CPS 420** as its only prerequisite. Your CPS 209 and MTH 110 aren't listed as prerequisites for CPS 633 itself (the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/633/).
 
 The excerpts don't show CPS 420's prerequisites, so I can't tell you what else you need before CPS 633. I don't know - check with your program advisor.
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",partly,gets CPS 420 but not that CPS 420 needs CPS 305 (CPS 209 + MTH 110 aren't enough)
 95,8,lookup,What's CPS-420 about?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/,"CPS 420 Discrete Structures introduces discrete structures as they apply to design and analysis. Topics include proof techniques, induction and recursion, graphs and trees and their applications in computing, finite automata and regular expressions, and counting (arithmetic and geometric progressions, permutations and combinations, and modular arithmetic).
 
 Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/420/)
 
-The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The CS department's curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 96,11,program,What do I take in 3rd semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"For the **full-time, four-year program**, third semester includes:
 
 - **Required:** CMN 300 Communication in the Computer Industry; CPS 305 Data Structures; CPS 393 Introduction to UNIX, C and C++; MTH 108 Linear Algebra
@@ -438,7 +438,7 @@ The excerpts don't list liberal studies or professionally-related courses for th
 
 Source: the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/)
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years. Under the 2026–27 Undergraduate Calendar, which calendar applies depends on your admission year (https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/curriculum_info/).",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years. Under the 2026–27 Undergraduate Calendar, which calendar applies depends on your admission year (https://www.torontomu.ca/calendar/2026-2027/policies-and-procedures/enrolment-records/curriculum_info/).",right,
 97,12,program,Which courses are required in first semester?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"**Full-time, four-year program, first semester** (from the CS department's curriculum page, https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/):
 
 - **Required:**
@@ -453,7 +453,7 @@ The curriculum page shows the current curriculum, which can differ for students 
 - **Open electives:** None listed for this semester
 - **Professionally-related:** None listed for this semester
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 98,15,program,When are the work terms in the co-op program?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"Co-op work terms are placed in the sample schedules on the CS department's curriculum page (https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/). The page shows two options:
 
 **Option A**
@@ -472,18 +472,18 @@ The curriculum page shows the current curriculum, which can differ for students 
 
 All work terms are graded pass/fail, and the Department may waive WKT 503. The curriculum page says co-op provides 12–20 months of paid work experience.
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 99,3,lookup,How many lecture hours a week is MTH 207?,https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/207/,"MTH 207 (Calculus and Computational Methods I) has **4 lecture hours** per week, plus 1 tutorial hour.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/207/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/207/",right,
 100,6,lookup,What does the Data Structures course cover?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/,"CPS 305 Data Structures covers these data structures: stacks, queues, lists, trees, and graphs. Its algorithm topics are searching, sorting, hashing, algorithm design, greedy approaches, dynamic programming, recursion, and complexity analysis.
 
 Source: the 2026–27 Undergraduate Calendar (https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/305/)
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 101,10,lookup,Does MTH 108 have any prerequisites?,https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/,"MTH 108 Linear Algebra has no prerequisites. The calendar lists ""Prerequisites: None"" for this course.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/108/",right,
 102,2,lookup,What are the prerequisites for CPS 721?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/,"CPS 721 requires **CPS 305 and CPS 420 and (MTH 380 or MTH 304)**. Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/721/
 
 The earlier courses in that chain have their own prerequisites:
@@ -491,12 +491,12 @@ The earlier courses in that chain have their own prerequisites:
 - CPS 420 requires CPS 305 and MTH 110.
 - MTH 380 requires MTH 131 or MTH 207. (Source: https://www.torontomu.ca/calendar/2026-2027/courses/mathematics/MTH/380/)
 
-The calendar excerpts I have don't list prerequisites for MTH 304, so I can't say what it requires.",,
+The calendar excerpts I have don't list prerequisites for MTH 304, so I can't say what it requires.",right,
 103,16,program,What courses do I need to take for the CS degree?,https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/,"For the full list of CS degree requirements, see the CS department's curriculum page: https://www.torontomu.ca/cs/current-undergraduate-students/curriculum-courses/computer-science-program/
 
 The page is organized by semester, so you can ask about a specific semester, and I'll list its required, liberal studies, open elective, and professionally-related courses.
 
-The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",,
+The curriculum page shows the current curriculum, which can differ for students admitted in earlier years.",right,
 104,9,lookup,What is the GPA weight of CPS 406?,https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/406/,"CPS 406 (Introduction to Software Engineering) has a GPA weight of 1.00.
 
-Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/406/",,
+Source: the 2026–27 Undergraduate Calendar, https://www.torontomu.ca/calendar/2026-2027/courses/computer-science/CPS/406/",right,
